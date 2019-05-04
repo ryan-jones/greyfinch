@@ -1,0 +1,61 @@
+Footer Vertical
+  backgroundColor #ffaa00
+  bottom 0
+  flexBasis auto
+  flexGrow 1
+  flexShrink 1
+  height 50
+  position fixed
+  width 100%
+  TextField Horizontal
+    alignItems center
+    backgroundColor #ffaa00
+    flexBasis auto
+    flexGrow 1
+    flexShrink 1
+    height 100%
+    justifyContent spaceAround
+    maxHeight 50
+    paddingLeft 15
+    paddingRight 15
+    width 100%
+    Author Horizontal
+      alignItems center
+      flexBasis auto
+      flexGrow 1
+      flexShrink 1
+      height 100%
+      justifyContent center
+      Text
+        color #fff
+        fontFamily Montserrat
+        fontSize 12
+        fontWeight 400
+        text Created by Ryan Jones
+        width 100%
+    Github Horizontal
+      alignItems center
+      flexBasis auto
+      flexGrow 1
+      flexShrink 1
+      height 100%
+      justifyContent center
+      Text
+        color #fff
+        fontFamily Montserrat
+        fontSize 12
+        fontWeight 400
+        text https://github.com/ryan-jones
+    LinkedIn Horizontal
+      alignItems center
+      flexBasis auto
+      flexGrow 1
+      flexShrink 1
+      height 100%
+      justifyContent center
+      Text
+        color #fff
+        fontFamily Montserrat
+        fontSize 12
+        fontWeight 400
+        text https://www.linkedin.com/in/ryanrjjones/

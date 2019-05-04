@@ -1,0 +1,10 @@
+Layout Vertical
+  alignItems center
+  flexBasis auto
+  flexGrow 1
+  flexShrink 1
+  height 100vh
+  justifyContent center
+  maxWidth 100%
+  minHeight 100vh
+  width 100%
