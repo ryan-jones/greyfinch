@@ -1,0 +1,38 @@
+.bug {
+  padding: 15px;
+
+  &__selectors {
+    display: flex;
+    justify-content: flex-start;
+    margin-bottom: 15px;
+
+    button:not(:first-of-type) {
+      margin: 0 15px;
+    }
+  }
+}
+
+.example {
+  display: flex;
+  justify-content: space-between;
+  height: 300px;
+
+  &__screenshot {
+    max-width: 50%;
+    height: 100%;
+
+    img {
+      height: 100%;
+      width: 100%;
+    }
+  }
+
+  &__description {
+    max-width: 75%;
+    padding: 0 15px 15px;
+
+    p:first-of-type {
+      margin-top: 0;
+    }
+  }
+}

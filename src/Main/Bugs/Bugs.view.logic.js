@@ -1,7 +1,9 @@
 import React from "react";
 import { BUGS } from "./utils";
 import BaseLayout from "../Layout/Layout.view.logic";
-import "./Bugs.css";
+import ReactHtmlParser from "react-html-parser";
+
+import "./Bugs.scss";
 
 const Bugs = props => {
   const [selectedBug, setSelectedBug] = React.useState({
@@ -27,9 +29,7 @@ const Bugs = props => {
             <img src={selectedBug.url} alt={selectedBug.alt} />
           </div>
           <div className='example__description'>
-            {selectedBug.description.map(line => (
-              <p>{line}</p>
-            ))}
+            {selectedBug.description.map(line => ReactHtmlParser(line))}
             <p>
               <strong>Solution: </strong>
               {selectedBug.hotfix}
