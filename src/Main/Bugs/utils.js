@@ -1,5 +1,7 @@
 import navBarBug from "../../Images/navbar-bug.jpg";
 import footerBug from "../../Images/footer-bug.jpg";
+import imageBug from "../../Images/image-bug.jpg";
+import linkBug from "../../Images/link-bug.jpg";
 export const BUGS = [
   {
     title: "Navbar",
@@ -27,5 +29,28 @@ export const BUGS = [
       "<p><strong>Actual:</strong>Only the first nested div is created, i.e. <i>Author</i></p>"
     ],
     hotfix: "None was done so that you could see the issue for yourselves"
+  },
+  {
+    title: "Image",
+    url: imageBug,
+    alt: "bug associated with adding image",
+    description: [
+      "<p><strong>When:</strong> adding an image to a view in View Tools</p>",
+      "<p><strong>Expected:</strong> and image is added to the View tree</p>",
+      "<p><strong>Actual:</strong>The image is not added in by View Tools </p>"
+    ],
+    hotfix:
+      "manually built components requiring images using jsx rather than View Tools"
+  },
+  {
+    title: "Link",
+    url: linkBug,
+    alt: "bug associated with routing",
+    description: [
+      "<p><strong>When:</strong> adding a Link from react-router-dom to a view.js file</p>",
+      "<p><strong>Expected:</strong> the app will redirect to the respective component listed in BrowserRouter</p>",
+      "<p><strong>Actual:</strong> the Link re-route does not fire on home page. The cursor styling <i>pointer</i> is not reflected in the app on home but <strong>IS</strong> reflected on /bugs</p>"
+    ],
+    hotfix: "Created link buttons in components to handle routing"
   }
 ];

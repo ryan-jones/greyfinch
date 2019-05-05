@@ -1,0 +1,14 @@
+LinkBug Image
+  alignSelf < auto
+  backgroundColor < transparent
+  borderTopLeftRadius < 0
+  borderTopRightRadius < 0
+  borderBottomLeftRadius < 0
+  borderBottomRightRadius < 0
+  marginTop < 0
+  marginBottom < 0
+  marginLeft < 0
+  marginRight < 0
+  source < ./link-bug.jpg
+  width < 1094
+  height < 474

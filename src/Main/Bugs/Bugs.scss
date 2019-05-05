@@ -6,8 +6,12 @@
     justify-content: flex-start;
     margin-bottom: 15px;
 
-    button:not(:first-of-type) {
-      margin: 0 15px;
+    button {
+      margin-right: 15px;
+      &.selected {
+        background-color: #ffaa00;
+        color: #fff;
+      }
     }
   }
 }
@@ -29,10 +33,14 @@
 
   &__description {
     max-width: 75%;
+    min-width: 50%;
     padding: 0 15px 15px;
 
     p:first-of-type {
       margin-top: 0;
     }
   }
+}
+.link-btn {
+  margin-top: 15px;
 }

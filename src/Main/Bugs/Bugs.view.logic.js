@@ -2,29 +2,30 @@ import React from "react";
 import { BUGS } from "./utils";
 import BaseLayout from "../Layout/Layout.view.logic";
 import ReactHtmlParser from "react-html-parser";
+import { Link } from "react-router-dom";
 
 import "./Bugs.scss";
 
 const Bugs = props => {
-  const [selectedBug, setSelectedBug] = React.useState({
-    url: "",
-    title: "",
-    alt: "",
-    description: [],
-    hotfix: ""
-  });
+  const [selectedBug, setSelectedBug] = React.useState(BUGS[0]);
 
-  React.useEffect(() => setSelectedBug(BUGS[0]), []);
-
+  const applyClass = bug => {
+    return bug.title === selectedBug.title ? "selected" : "";
+  };
   return (
     <BaseLayout>
-      <section className='bug'>
+      <div className='bug'>
         <div className='bug__selectors'>
           {BUGS.map(bug => (
-            <button onClick={() => setSelectedBug(bug)}>{bug.title}</button>
+            <button
+              className={applyClass(bug)}
+              onClick={() => setSelectedBug(bug)}
+            >
+              {bug.title}
+            </button>
           ))}
         </div>
-        <section className='example'>
+        <div className='example'>
           <div className='example__screenshot'>
             <img src={selectedBug.url} alt={selectedBug.alt} />
           </div>
@@ -35,8 +36,11 @@ const Bugs = props => {
               {selectedBug.hotfix}
             </p>
           </div>
-        </section>
-      </section>
+        </div>
+        <Link to='/'>
+          <button className='link-btn'>Go to home page</button>
+        </Link>
+      </div>
     </BaseLayout>
   );
 };

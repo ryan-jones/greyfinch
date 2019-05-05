@@ -9,16 +9,17 @@ import { LANGUAGES, randomAnimal } from "./utils";
 import { connect } from "react-redux";
 import debounce from "lodash/debounce";
 import get from "lodash/get";
+import { Link } from "react-router-dom";
+// custom hooks
+import { usePrevious } from "../../hooks/usePrevious";
+import "./Gallery.scss";
+
+const initialAnimal = randomAnimal();
 
 const Gallery = ({ gif, fetchGif }) => {
-  const [language, setLanguage] = React.useState({
-    lang: "en",
-    text: "Or choose your own!",
-    name: "English",
-    cta: "Click to see a new animal!",
-    placeholder: "Tiger, snake, dinosaur..."
-  });
-
+  const [language, setLanguage] = React.useState(LANGUAGES[0]);
+  const [animal, setAnimal] = React.useState(initialAnimal);
+  const previous = usePrevious(animal);
   React.useEffect(() => {
     fetchNew();
   }, []);
@@ -30,9 +31,14 @@ const Gallery = ({ gif, fetchGif }) => {
     }
   }, [language]);
 
-  const fetchNew = selectedAnimal => {
-    const animal = selectedAnimal || randomAnimal();
-    fetchGif(animal, language);
+  const fetchNew = (selectedAnimal = null) => {
+    let newAnimal = selectedAnimal || randomAnimal();
+    while (newAnimal === previous) {
+      newAnimal = randomAnimal();
+    }
+    setAnimal(newAnimal);
+    fetchGif(newAnimal, language);
+    if (!selectedAnimal) document.getElementById("inputField").value = "";
   };
 
   const debounceHandler = (func, time) => {
@@ -43,16 +49,20 @@ const Gallery = ({ gif, fetchGif }) => {
     };
   };
 
-  const handleInputChange = e => fetchNew(e.target.value);
+  const handleInputChange = e => {
+    fetchNew(e.target.value);
+  };
 
   return (
     <BaseLayout>
       <GalleryView>
-        <img src={get(gif, "downsized.url", "")} />
-        <button onClick={() => fetchNew()}>{language.cta}</button>
-        <div>
-          <div>
-            <label for='inputField'>{language.text}</label>
+        <div className='gallery__img'>
+          <img src={get(gif, "downsized.url", "")} alt='gallery img' />
+          <button onClick={() => fetchNew()}>{language.cta}</button>
+        </div>
+        <div className='gallery__input'>
+          <div className='input-field'>
+            <label htmlFor='inputField'>{language.text}</label>
             <input
               id='inputField'
               type='text'
@@ -60,14 +70,19 @@ const Gallery = ({ gif, fetchGif }) => {
               onChange={debounceHandler(handleInputChange, 500)}
             />
           </div>
-          <div>
+          <div className='language-selector'>
             <select onChange={e => setLanguage(e.target.value)}>
               {LANGUAGES.map(value => (
-                <option value={value.lang}>{value.name}</option>
+                <option key={value.lang} value={value.lang}>
+                  {value.name}
+                </option>
               ))}
             </select>
           </div>
         </div>
+        <Link to='/bugs'>
+          <button className='link-btn'>Go to bugs page</button>
+        </Link>
       </GalleryView>
     </BaseLayout>
   );

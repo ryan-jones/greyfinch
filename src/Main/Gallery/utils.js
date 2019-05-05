@@ -5,7 +5,8 @@ export const LANGUAGES = [
     lang: "en",
     text: "Or choose your own!",
     name: "English",
-    cta: "Click to see a new animal!"
+    cta: "Click to see a new animal!",
+    placeholder: "TIger, snake, dinosaur..."
   },
   {
     lang: "es",

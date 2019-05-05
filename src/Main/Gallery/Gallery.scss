@@ -1,0 +1,56 @@
+@mixin field($height, $width) {
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+  height: $height;
+  width: $width;
+}
+@mixin align() {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.gallery {
+  &__img {
+    @include align();
+    width: auto;
+    max-width: 100%;
+    flex-direction: column;
+
+    img {
+      height: 400px;
+
+      @media only screen and (max-width: 320px) {
+        max-width: calc(100% - 30px);
+        max-height: 200px;
+      }
+    }
+    button {
+      margin: 15px 0;
+      width: 50%;
+      background-color: #ffaa00;
+      color: #fff;
+    }
+  }
+
+  &__input {
+    @include align();
+    width: 50%;
+
+    .input-field {
+      @include field(100%, 75%);
+      width: 75%;
+      margin-right: 5px;
+    }
+    .language-selector {
+      @include field(100%, 25%);
+      select {
+        width: 100%;
+      }
+    }
+  }
+}
+.link-btn {
+  margin-top: 15px;
+}

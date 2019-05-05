@@ -5,7 +5,8 @@ Footer Vertical
   flexGrow 1
   flexShrink 1
   height 50
-  position fixed
+  maxHeight 50
+  position absolute
   width 100%
   TextField Horizontal
     alignItems center

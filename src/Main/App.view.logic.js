@@ -6,8 +6,8 @@ import ViewBugs from "./Bugs/Bugs.view.logic";
 const AppLogic = () => (
   <BrowserRouter>
     <Switch>
-      <Route exact path='/bugs' component={ViewBugs} />
       <Route exact path='/' component={Gallery} />
+      <Route path='/bugs' component={ViewBugs} />
     </Switch>
   </BrowserRouter>
 );
