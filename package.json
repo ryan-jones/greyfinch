@@ -28,7 +28,8 @@
     "views": "sleep 10 && views-morph src --watch --as react-dom",
     "prebuild": "views-morph src --as react-dom",
     "predeploy": "npm run build",
-    "deploy": "surge -p build"
+    "deploy": "surge -p build",
+    "cypress": "cypress open"
   },
   "devDependencies": {
     "@types/jest": "^24.0.12",
@@ -41,6 +42,7 @@
     "@types/react-router-dom": "^4.3.2",
     "@viewstools/morph": "^16.0.0",
     "concurrently": "^4.0.1",
+    "cypress": "^3.2.0",
     "redux-devtools-extension": "^2.13.8",
     "typescript": "^3.4.5"
   },
