@@ -1,7 +1,9 @@
 import React from "react";
-// @ts-ignore
-import { BUGS } from "./utils";
+// components
 import BaseLayout from "../Layout/Layout.view.logic";
+// @ts-ignore
+import { BUGS } from "./constants";
+// dependencies
 import ReactHtmlParser from "react-html-parser";
 import { Link } from "react-router-dom";
 

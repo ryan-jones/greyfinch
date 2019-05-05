@@ -8,7 +8,7 @@ I was impressed with the View Tools package. I can definitely see its advantages
 
 ## Challenges
 
-The biggest challenge was utilizing View Tools. As this was the first time I've used the platform, I wasn't fully familiar with how to fully embrace its capabilities. Additionally, there were multiple instances were I encountered bugs that impeded development (which I've included as feedback in /bugs.
+The biggest challenge was utilizing View Tools. As this was the first time I've used the platform, I wasn't fully familiar with how to fully embrace its capabilities. Additionally, there were multiple instances were I encountered bugs that impeded development (which I've included as feedback in /bugs. The end result is that the project is not as clean or as organized as I would normally like, but I imagine a big part of this exercise was seeing how we as candidates can navigate through View Tools.
 
 Some questions I am left with after doing the project.
 
@@ -32,6 +32,8 @@ Because of the aforementioned, I had to make some decisions that I otherwise man
 
 - When useful, I used the .ts and .tsx file format. However, because of the .view, .view.js file structure, dealing with the proper syntax for importing files meant that converting every .js into .ts would involve a lot of time correcting every import file path and creating a custom tsconfig to handle the file extensions. : \
 
+* I didn't realize that you changed the media query mods in View Tools by first changing the screen size view until near the very end of my project. I didn't put time into correcting the responsiveness because it was mentioned that I may be working with a designer as part of the review.
+
 ### So how come you used ...
 
 **Redux:** Admittedly, using redux is excessive and unnecessary for completing the minimum requirements of the project. The majority of stateful logic is contained within a single component, and none of the components share logic between themselves. Therefore, the primary motivating factor for using redux was _scalability_. Assuming that a code review would also ential adding or modifying features, such as moving or adding a component, relying on an alternative method of sharing logic, such as contexts or custom hooks may result in unintended consequences. Using redux, we can rearrange the entire structure of the app without worrying about how we share state.
@@ -47,3 +49,5 @@ Because of the aforementioned, I had to make some decisions that I otherwise man
 **Add a searchable input field:** "You can have any color you want, as long as it's black" may have worked for the world of Henry Ford, but it' not going to cut it in the 21st century. Giving the children more options means keeping them entertained longer during clinical waits.
 
 **Create a bug page:** Obviously, a lot of effort has been put into the View Tools package. The motivation for highlighting bugs that I came across while using the platform was two-fold: First, to provide feedback to the developers who built the platform. Second, to point out instances where View Tools may have impacted normal development strategies.
+
+### How you guys like it. If you have any further questions, please don't hesitate to ask.

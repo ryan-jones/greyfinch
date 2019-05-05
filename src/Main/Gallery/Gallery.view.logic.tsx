@@ -4,7 +4,7 @@ import GalleryView from "./Gallery.view.js";
 import BaseLayout from "../Layout/Layout.view.logic";
 // actions and utils
 import { fetchGif } from "../../Store/actions/gif.actions";
-import { LANGUAGES, randomAnimal } from "./utils";
+import { LANGUAGES, randomAnimal } from "./constants";
 // dependencies
 import { connect } from "react-redux";
 import debounce from "lodash/debounce";
