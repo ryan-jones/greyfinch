@@ -1,6 +1,6 @@
 import { createStore, compose, applyMiddleware, combineReducers } from "redux";
 import thunk from "redux-thunk";
-import gifReducer from "./reducers/gif.reducer";
+import gifReducer from "./reducers/gif.reducer.ts";
 
 export default function configureStore(preloadedState) {
   const composeEnhancers =
@@ -14,6 +14,5 @@ export default function configureStore(preloadedState) {
     rootReducer,
     composeEnhancers(applyMiddleware(thunk))
   );
-  console.log("STORE", store.getState());
   return store;
 }

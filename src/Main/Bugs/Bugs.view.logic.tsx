@@ -1,4 +1,5 @@
 import React from "react";
+// @ts-ignore
 import { BUGS } from "./utils";
 import BaseLayout from "../Layout/Layout.view.logic";
 import ReactHtmlParser from "react-html-parser";
@@ -6,17 +7,25 @@ import { Link } from "react-router-dom";
 
 import "./Bugs.scss";
 
-const Bugs = props => {
+interface Bug {
+  title: string;
+  url: string;
+  alt: string;
+  description: string[];
+  hotfix: string;
+}
+
+const Bugs = () => {
   const [selectedBug, setSelectedBug] = React.useState(BUGS[0]);
 
-  const applyClass = bug => {
+  const applyClass = (bug: Bug): string => {
     return bug.title === selectedBug.title ? "selected" : "";
   };
   return (
     <BaseLayout>
       <div className='bug'>
         <div className='bug__selectors'>
-          {BUGS.map(bug => (
+          {BUGS.map((bug: Bug) => (
             <button
               className={applyClass(bug)}
               onClick={() => setSelectedBug(bug)}

@@ -31,9 +31,18 @@
     "deploy": "surge -p build"
   },
   "devDependencies": {
+    "@types/jest": "^24.0.12",
+    "@types/lodash": "^4.14.123",
+    "@types/node": "^12.0.0",
+    "@types/react": "^16.8.16",
+    "@types/react-dom": "^16.8.4",
+    "@types/react-html-parser": "^2.0.0",
+    "@types/react-redux": "^7.0.8",
+    "@types/react-router-dom": "^4.3.2",
     "@viewstools/morph": "^16.0.0",
     "concurrently": "^4.0.1",
-    "redux-devtools-extension": "^2.13.8"
+    "redux-devtools-extension": "^2.13.8",
+    "typescript": "^3.4.5"
   },
   "browserslist": [
     ">0.2%",

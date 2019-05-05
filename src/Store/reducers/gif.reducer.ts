@@ -1,8 +1,13 @@
 import { GIF_FETCH_SUCCESS } from "../actions/gif.actions";
 
-const initialState = {};
+export interface Gif {
+  images: object;
+}
+const initialState: Gif = {
+  images: {}
+};
 
-const gifReducer = (state = initialState, action) => {
+const gifReducer = (state = initialState, action: any) => {
   switch (action.type) {
     case GIF_FETCH_SUCCESS:
       return action.payload;

@@ -1,8 +1,8 @@
 import React from "react";
 import { Switch, BrowserRouter, Route } from "react-router-dom";
 
-import Gallery from "./Gallery/Gallery.view.logic";
-import ViewBugs from "./Bugs/Bugs.view.logic";
+import Gallery from "./Gallery/Gallery.view.logic.tsx";
+import ViewBugs from "./Bugs/Bugs.view.logic.tsx";
 const AppLogic = () => (
   <BrowserRouter>
     <Switch>
